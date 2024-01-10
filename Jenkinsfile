@@ -11,7 +11,7 @@ pipeline {
   stages {
     stage('Echo Build') {
       steps {
-        sh 'echo unity install'
+        sh 'echo unity install 222'
         sh 'ls -lh /opt/unity'
       }
     }
