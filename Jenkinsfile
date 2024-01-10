@@ -18,7 +18,7 @@ pipeline {
 
         sh 'echo Logging environment variables: $UNITY_USERNAME_PASSWORD_USR - $UNITY_USERNAME_PASSWORD_PSW - $UNITY_SERIAL'
 
-        sh 'activate_unity.sh'
+        sh '$workspace/activate_unity.sh'
       }
     }
     stage('Return Unity License') {
@@ -27,7 +27,7 @@ pipeline {
 
         sh 'echo Logging environment variables: $UNITY_USERNAME_PASSWORD_USR - $UNITY_USERNAME_PASSWORD_PSW - $UNITY_SERIAL'
 
-        sh 'deactivate_unity.sh'
+        sh '$workspace/deactivate_unity.sh'
       }
     }
   }
