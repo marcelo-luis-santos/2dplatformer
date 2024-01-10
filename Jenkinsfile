@@ -19,7 +19,9 @@ pipeline {
         sh 'echo $UNITY_USERNAME_PASSWORD_USR - $UNITY_USERNAME_PASSWORD_PSW - $UNITY_SERIAL > file.txt'
         sh 'cat > file.txt'
 
-        sh 'echo Logging environment variables: $UNITY_USERNAME_PASSWORD_USR - $UNITY_USERNAME_PASSWORD_PSW - $UNITY_SERIAL'
+        sh 'echo Logging environment variables: $user_unity - $password_unity - $serial_unity'
+
+        sh 'echo Logging environment variables from credentials: $UNITY_USERNAME_PASSWORD_USR - $UNITY_USERNAME_PASSWORD_PSW - $UNITY_SERIAL'
 
         sh '''#!/bin/bash
           /opt/unity/Editor/Unity -batchmode -quit -logFile /dev/stdout -nographics -username '$UNITY_USERNAME_PASSWORD_USR' -password '$UNITY_USERNAME_PASSWORD_PSW' -serial '$UNITY_SERIAL'
