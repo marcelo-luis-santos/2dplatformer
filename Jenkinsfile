@@ -18,7 +18,7 @@ pipeline {
     stage('Activate Unity License') {
       steps {
         sh 'echo unity install 222'
-        sh 'opt/unity/Editor/Unity -batchmode -quit -logFile /dev/stdout -nographics -projectPath $workspace'
+        sh '/opt/unity/Editor/Unity -batchmode -quit -logFile /dev/stdout -nographics -projectPath $workspace'
       }
     }
 
