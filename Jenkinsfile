@@ -1,4 +1,7 @@
 pipeline {
+  triggers {
+    pollSCM('* * * * *')
+  }
   agent {
     docker {
       image 'unityci/editor:ubuntu-2022.3.9f1-mac-mono-3.0.0'
