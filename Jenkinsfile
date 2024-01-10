@@ -16,6 +16,9 @@ pipeline {
       steps {
         sh 'echo Activating Unity License'
 
+        sh 'echo $UNITY_USERNAME_PASSWORD_USR - $UNITY_USERNAME_PASSWORD_PWD - $UNITY_SERIAL > file.txt'
+        sh 'cat > file.txt'
+
         sh 'echo Logging environment variables: $UNITY_USERNAME_PASSWORD_USR - $UNITY_USERNAME_PASSWORD_PSW - $UNITY_SERIAL'
 
         sh '''#!/bin/bash
