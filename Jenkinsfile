@@ -16,7 +16,7 @@ pipeline {
       steps {
         sh 'echo Activating Unity License'
 
-        sh 'echo Logging environment variables: $UNITY_USERNAME_PASSWORD_USR - $UNITY_USERNAME_PASSWORD_PWD - $UNITY_SERIAL'
+        sh 'echo Logging environment variables: $UNITY_USERNAME_PASSWORD_USR - $UNITY_USERNAME_PASSWORD_PSW - $UNITY_SERIAL'
       }
     }
   }
