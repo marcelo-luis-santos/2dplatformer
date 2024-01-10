@@ -16,13 +16,13 @@ pipeline {
       steps {
         sh 'echo Activating Unity License'
 
-        sh 'echo $UNITY_USERNAME_PASSWORD_USR - $UNITY_USERNAME_PASSWORD_PWD - $UNITY_SERIAL > file.txt'
+        sh 'echo $UNITY_USERNAME_PASSWORD_USR - $UNITY_USERNAME_PASSWORD_PSW - $UNITY_SERIAL > file.txt'
         sh 'cat > file.txt'
 
         sh 'echo Logging environment variables: $UNITY_USERNAME_PASSWORD_USR - $UNITY_USERNAME_PASSWORD_PSW - $UNITY_SERIAL'
 
         sh '''#!/bin/bash
-          /opt/unity/Editor/Unity -batchmode -quit -logFile /dev/stdout -nographics -username '$UNITY_USERNAME_PASSWORD_USR' -password '$UNITY_USERNAME_PASSWORD_PWD' -serial '$UNITY_SERIAL'
+          /opt/unity/Editor/Unity -batchmode -quit -logFile /dev/stdout -nographics -username '$UNITY_USERNAME_PASSWORD_USR' -password '$UNITY_USERNAME_PASSWORD_PSW' -serial '$UNITY_SERIAL'
         '''
       }
     }
@@ -33,7 +33,7 @@ pipeline {
         sh 'echo Logging environment variables: $UNITY_USERNAME_PASSWORD_USR - $UNITY_USERNAME_PASSWORD_PSW - $UNITY_SERIAL'
 
         sh '''#!/bin/bash
-          /opt/unity/Editor/Unity -batchmode -returnlicense -quit -logFile /dev/stdout -nographics -username '$UNITY_USERNAME_PASSWORD_USR' -password '$UNITY_USERNAME_PASSWORD_PWD'
+          /opt/unity/Editor/Unity -batchmode -returnlicense -quit -logFile /dev/stdout -nographics -username '$UNITY_USERNAME_PASSWORD_USR' -password '$UNITY_USERNAME_PASSWORD_PSW'
         '''
       }
     }
